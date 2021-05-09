@@ -24,6 +24,12 @@
                   </ul>
                 </div>
          @endif
+
+         @if (session('login_error'))
+                <div class="alert alert-danger">
+                    {{ session('login_error') }}
+                </div>
+         @endif
           <label for="inputEmail" class="visually-hidden">Email address</label>
           <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
           <label for="inputPassword" class="visually-hidden">Password</label>
