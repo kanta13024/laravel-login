@@ -18,16 +18,20 @@
          @if ($errors->any())
                 <div class="alert alert-danger">
                   <ul>
-                  @foreach ($errors->all() as $error)
-                   <li>{{ $error }}</li>
-                  @endforeach
+                      @foreach ($errors->all() as $error)
+                           <li>{{ $error }}</li>
+                      @endforeach
                   </ul>
                 </div>
          @endif
+
+         <x-alert type="danger" :session="session('login_error')"/>
+         <x-alert type="danger" :session="session('logout')"/>
+
           <label for="inputEmail" class="visually-hidden">Email address</label>
-          <input type="email" id="inputEmail"　name="email" class="form-control" placeholder="Email address" required autofocus>
-          <label for="inputPassword" name="password" class="visually-hidden">Password</label>
-          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+          <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
+          <label for="inputPassword" class="visually-hidden">Password</label>
+          <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
           <button class="w-100 btn btn-lg btn-primary" type="submit">ログイン</button>
         </form>
 </body>
